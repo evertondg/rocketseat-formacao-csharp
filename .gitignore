@@ -1,0 +1,71 @@
+## .NET / C#
+
+# Build outputs
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ncrunchproject
+*.ncrunchsolution
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.nuget/
+
+# Publish output
+publish/
+**/publish/
+
+# Logs
+*.log
+logs/
+
+# User secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/secrets.json
+**/*.secrets.json
+
+# .NET secrets storage
+%APPDATA%/Microsoft/UserSecrets/
+
+# Docker / environment files
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+
+# Coverage / test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+lcov.info
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp / cache
+*.tmp
+*.temp
+.cache/

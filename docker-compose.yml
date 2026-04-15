@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  cashflow.api:
+    image: ${DOCKER_REGISTRY-}cashflowapi
+    build:
+      context: .
+      dockerfile: src/CashFlow.Api/Dockerfile
+    depends_on:
+      - cashflow.db
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=cashflow.db;Database=cashflowdb;Uid=root;Pwd=rootpassword;
+
+  cashflow.db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cashflowdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
